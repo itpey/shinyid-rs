@@ -1,0 +1,14 @@
+[package]
+name = "shinyid"
+version = "0.1.0"
+edition = "2021"
+authors = ["itpey <itpey@github.com>"]
+license = "Apache-2.0"
+description = "A package for encoding and decoding unique identifiers into URL-safe ( shiny )"
+repository = "https://github.com/itpey/shinyid-rs"
+readme = "README.md"
+categories = ["data-encoding"]
+keywords = ["encoding", "id", "shiny"]
+
+[dependencies]
+lazy_static = "1.4"
