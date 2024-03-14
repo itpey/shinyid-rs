@@ -14,6 +14,7 @@
 
 use std::collections::HashMap;
 
+/// The base64 URL-safe charset used for encoding.
 const BASE64_URL_CHARSET: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
 
 lazy_static::lazy_static! {
@@ -22,6 +23,23 @@ lazy_static::lazy_static! {
     };
 }
 
+/// ToShiny converts an id to a shiny.
+///
+/// # Arguments
+///
+/// * `id` - The ID to convert.
+///
+/// # Returns
+///
+/// shiny.
+///
+/// # Examples
+///
+/// ```
+/// use shinyid::{to_shiny};
+/// let shiny = to_shiny(500);
+/// assert_eq!(shiny, "H0");
+/// ```
 pub fn to_shiny(mut id: u64) -> String {
     if id == 0 {
         return "A".to_string();
@@ -36,6 +54,23 @@ pub fn to_shiny(mut id: u64) -> String {
     shiny.chars().rev().collect()
 }
 
+/// ToId converts a shiny to its corresponding id.
+///
+/// # Arguments
+///
+/// * `shiny` - The shiny to convert.
+///
+/// # Returns
+///
+/// The ID, or an error if the shiny is invalid.
+///
+/// # Examples
+///
+/// ```
+/// use shinyid::{to_id};
+/// let id = to_id("H0").unwrap();
+/// assert_eq!(id, 500);
+/// ```
 pub fn to_id(shiny: &str) -> Result<u64, &'static str> {
     if shiny == "A" {
         return Ok(0);
