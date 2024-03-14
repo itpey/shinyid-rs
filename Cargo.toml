@@ -1,6 +1,6 @@
 [package]
 name = "shinyid"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["itpey <itpey@github.com>"]
 license = "Apache-2.0"
