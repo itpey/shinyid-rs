@@ -31,7 +31,7 @@ Add the following line to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-shinyid = "0.1.0"
+shinyid = "0.2.0"
 ```
 
 ## Example
